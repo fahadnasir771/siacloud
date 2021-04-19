@@ -26,8 +26,9 @@ class ApiController extends Controller
             $data['custom_collections'][$i]['resource'] = 'Showing All Categories';
         }
         
-
-        return $data['custom_collections'];
+        $data['categories'] = $data['custom_collections'];
+        unset($data['custom_collections']);
+        return $data;
     }
 
     function get_category(Request $request, $id, $id2){
@@ -45,7 +46,9 @@ class ApiController extends Controller
         $data['custom_collection']['provider_id'] = 1;
         $data['custom_collection']['resource'] = 'Show Category By Category Id';
 
-        return $data['custom_collection'];
+        $data['category'] = $data['custom_collection'];
+        unset($data['custom_collection']);
+        return $data;
     }
 
     function post_category(Request $request, $id) {
@@ -79,16 +82,18 @@ class ApiController extends Controller
         curl_close($curl);
         $decode = json_decode($response);
         return [
-                'id' => $decode->custom_collection->id,
-                'updated_at' => $decode->custom_collection->updated_at,
-                'published_at' => $decode->custom_collection->published_at,
-                'title' => $decode->custom_collection->title,
-                'Message' => 'Category Created Succesfully', 
-                'Success' => true, 
-                'provider' => 'Shopify', 
-                'provider_id' => 1, 
-                'resource' => 
-                'Creating Category'
+                'category' => [
+                    'id' => $decode->custom_collection->id,
+                    'updated_at' => $decode->custom_collection->updated_at,
+                    'published_at' => $decode->custom_collection->published_at,
+                    'title' => $decode->custom_collection->title,
+                    'Message' => 'Category Created Succesfully', 
+                    'Success' => true, 
+                    'provider' => 'Shopify', 
+                    'provider_id' => 1, 
+                    'resource' => 
+                    'Creating Category'
+                ]
             ];
         
     }
@@ -125,16 +130,18 @@ class ApiController extends Controller
           
           $decode = json_decode($response);
             return [
-                    'id' => $decode->custom_collection->id,
-                    'updated_at' => $decode->custom_collection->updated_at,
-                    'published_at' => $decode->custom_collection->published_at,
-                    'title' => $decode->custom_collection->title,
-                    'Message' => 'Category Updated Succesfully', 
-                    'Success' => true, 
-                    'provider' => 'Shopify', 
-                    'provider_id' => 1, 
-                    'resource' => 
-                    'Updating Category'
+                    'category' => [
+                        'id' => $decode->custom_collection->id,
+                        'updated_at' => $decode->custom_collection->updated_at,
+                        'published_at' => $decode->custom_collection->published_at,
+                        'title' => $decode->custom_collection->title,
+                        'Message' => 'Category Updated Succesfully', 
+                        'Success' => true, 
+                        'provider' => 'Shopify', 
+                        'provider_id' => 1, 
+                        'resource' => 
+                        'Updating Category'
+                    ]
                 ];
     }
 
@@ -145,12 +152,14 @@ class ApiController extends Controller
 
         return 
         [
-            'Message' => 'Category Deleted Succesfully', 
-            'Success' => true, 
-            'provider' => 'Shopify', 
-            'provider_id' => 1, 
-            'resource' => 
-            'Deleting Category'
+            'response' => [
+                'Message' => 'Category Deleted Succesfully', 
+                'Success' => true, 
+                'provider' => 'Shopify', 
+                'provider_id' => 1, 
+                'resource' => 
+                'Deleting Category'
+            ]
         ];
     }
 }

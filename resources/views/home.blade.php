@@ -122,17 +122,18 @@
                                     <p class="text-bold-800">Response:</p>
                                     <pre class="line-numbers"> 
                                       <code class="language-json"> 
-                                        [
-                                            {
-                                                "id": 266086678707,
-                                                "updated_at": "2021-04-16T01:13:00+05:00",
-                                                "published_at": "2021-04-15T21:35:20+05:00",
-                                                "title": "Collection",
-                                                "provider": "Shopify",
-                                                "provider_id": 1,
-                                                "resource": "Showing All Categories"
-                                            }, ...
-                                        ]
+                                        {
+                                            "categories": [
+                                                {
+                                                    "id": 266086678707,
+                                                    "updated_at": "2021-04-16T01:13:00+05:00",
+                                                    "published_at": "2021-04-15T21:35:20+05:00",
+                                                    "title": "Collection",
+                                                    "provider": "Shopify",
+                                                    "provider_id": 1,
+                                                    "resource": "Showing All Categories"
+                                                },
+                                        }
                                       </code> 
                                     </pre>
                                   </div>
@@ -170,13 +171,15 @@
                                     <pre class="line-numbers"> 
                                       <code class="language-json"> 
                                         {
-                                            "id": 266086678707,
-                                            "updated_at": "2021-04-16T01:13:00+05:00",
-                                            "published_at": "2021-04-15T21:35:20+05:00",
-                                            "title": "Collection",
-                                            "provider": "Shopify",
-                                            "provider_id": 1,
-                                            "resource": "Show Category By Category Id"
+                                            "category": {
+                                                "id": 266086678707,
+                                                "updated_at": "2021-04-16T01:13:00+05:00",
+                                                "published_at": "2021-04-15T21:35:20+05:00",
+                                                "title": "Collection",
+                                                "provider": "Shopify",
+                                                "provider_id": 1,
+                                                "resource": "Show Category By Category Id"
+                                            }
                                         }
                                       </code> 
                                     </pre>
@@ -224,15 +227,17 @@
                                     <pre class="line-numbers"> 
                                       <code class="language-json"> 
                                         {
-                                            "id": 266266017971,
-                                            "updated_at": "2021-04-18T13:21:56+05:00",
-                                            "published_at": "2021-04-18T13:21:56+05:00",
-                                            "title": "New Collection 23",
-                                            "Message": "Category Created Succesfully",
-                                            "Success": true,
-                                            "provider": "Shopify",
-                                            "provider_id": 1,
-                                            "resource": "Creating Category"
+                                            "category": {
+                                                "id": 266373562547,
+                                                "updated_at": "2021-04-19T20:55:37+05:00",
+                                                "published_at": "2021-04-19T20:55:37+05:00",
+                                                "title": "New Collection",
+                                                "Message": "Category Created Succesfully",
+                                                "Success": true,
+                                                "provider": "Shopify",
+                                                "provider_id": 1,
+                                                "resource": "Creating Category"
+                                            }
                                         }
                                       </code> 
                                     </pre>
@@ -282,15 +287,17 @@
                                     <pre class="line-numbers"> 
                                       <code class="language-json"> 
                                         {
-                                            "id": 266266017971,
-                                            "updated_at": "2021-04-18T13:23:21+05:00",
-                                            "published_at": "2021-04-18T13:21:56+05:00",
-                                            "title": "Updated Collection",
-                                            "Message": "Category Updated Succesfully",
-                                            "Success": true,
-                                            "provider": "Shopify",
-                                            "provider_id": 1,
-                                            "resource": "Updating Category"
+                                            "cartegory": {
+                                                "id": 266373562547,
+                                                "updated_at": "2021-04-19T20:57:12+05:00",
+                                                "published_at": "2021-04-19T20:55:37+05:00",
+                                                "title": "Updated Collection",
+                                                "Message": "Category Updated Succesfully",
+                                                "Success": true,
+                                                "provider": "Shopify",
+                                                "provider_id": 1,
+                                                "resource": "Updating Category"
+                                            }
                                         }
                                       </code> 
                                     </pre>
@@ -336,11 +343,13 @@
                                     <pre class="line-numbers"> 
                                       <code class="language-json"> 
                                         {
-                                            "Message": "Category Deleted Succesfully",
-                                            "Success": true,
-                                            "provider": "Shopify",
-                                            "provider_id": 1,
-                                            "resource": "Deleting Category"
+                                            "response": {
+                                                "Message": "Category Deleted Succesfully",
+                                                "Success": true,
+                                                "provider": "Shopify",
+                                                "provider_id": 1,
+                                                "resource": "Deleting Category"
+                                            }
                                         }
                                       </code> 
                                     </pre>
