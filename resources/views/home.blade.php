@@ -96,7 +96,7 @@
                               <div class="card-body">
                                 <div class="module"> 
                                   <div class="details">
-                                    <h4><b>Authorize Request (GET)</b></h4>
+                                    <h4><b>Authorize Request (POST)</b></h4>
                                     <br>
                                     <div class="url">
                                       <span style="color: gray">{{ env('APP_URL') }}</span><span 
@@ -108,7 +108,7 @@
                                         <li class=" point domain-bullet">Domain address of the API resource</li>
                                         <li class=" point path-bullet">Endpoint for the resource</li>
                                       </ul>
-                                      <p><b>GET</b> method will be used with this API. <br> You have to send admin credentials in application/json format. <br> The API will return the API token which will be valid for only <b>24 hours</b>. <br> You have to use that API token in the header of each resource API request you made. <code>Authorization: Bearer 1|24eEcA9gmeRDNEdMG3SKi3r1lwFRv87uBvLHNWyY</code> <br> <b>Authorization</b> is the key and the token will be the value for the header</p>
+                                      <p><b>POST</b> method will be used with this API. <br> You have to send admin credentials in application/json format. <br> The API will return the API token which will be valid for only <b>24 hours</b>. <br> You have to use that API token in the header of each resource API request you made. <code>Authorization: Bearer 1|24eEcA9gmeRDNEdMG3SKi3r1lwFRv87uBvLHNWyY</code> <br> <b>Authorization</b> is the key and the token will be the value for the header</p>
                                       
                                       
                                       
