@@ -87,7 +87,7 @@
                                     <td><b>{{ $store->id }}</b></td>
                                     <td class="store_name">{{ $store->name }}</td>
                                     <td class="store_category"> {{ $store->category }} </td>
-                                    <td><a href="https://7f6da456075a7b05655ad2f2aa566c9b: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@api-test-27.myshopify.com/admin/api/2021-04/products.json">{{ env('APP_URL') }}admin/api/2021-04/{resource}.json</a></td>
+                                    <td><a href="javascript:void(0)" onclick="alert('Intended to modify later -Alpha Verison')">{{ env('APP_URL') }}admin/api/2021-04/{resource}.json</a></td>
                                     <td>
                                         <div class="chip chip-{{ ($store->active == 1) ? 'success' : 'danger'  }}">
                                             <div class="chip-body">
