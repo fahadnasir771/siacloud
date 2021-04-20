@@ -71,6 +71,80 @@
 
                 <!-- Categories -->
                 <section id="line-numbers" class="row">
+                  <div class=" col-12">
+                      <div class="card">
+                          <div class="card-header">
+                              <h4 class="card-title title-card" style="font-size: 24px;">Authorization</h4>
+                          </div>
+                          <style>
+                            .title-card {
+                              position: relative;
+                              width: 100%
+                            }
+                            .title-card::after{
+                              content: '';
+                              position: absolute;
+                              bottom: -15px;
+                              left: -21px;
+                              height: 0.8px;
+                              width: 103%;
+                              background: #2c2c2c79
+                            }
+                          </style>
+                          <br>
+                          <div class="card-content">
+                              <div class="card-body">
+                                <div class="module"> 
+                                  <div class="details">
+                                    <h4><b>Authorize Request (GET)</b></h4>
+                                    <br>
+                                    <div class="url">
+                                      <span style="color: gray">{{ env('APP_URL') }}</span><span 
+                                      style="color: purple">api/login</span>
+                                    </div>
+                                    <br>
+                                    <div>
+                                      <ul class="points" style="color: #000; font-weight: 500">
+                                        <li class=" point domain-bullet">Domain address of the API resource</li>
+                                        <li class=" point path-bullet">Endpoint for the resource</li>
+                                      </ul>
+                                      <p><b>GET</b> method will be used with this API. <br> You have to send admin credentials in application/json format. <br> The API will return the API token which will be valid for only <b>24 hours</b>. <br> You have to use that API token in the header of each resource API request you made. <code>Authorization: Bearer 1|24eEcA9gmeRDNEdMG3SKi3r1lwFRv87uBvLHNWyY</code> <br> <b>Authorization</b> is the key and the token will be the value for the header</p>
+                                      
+                                      
+                                      
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <p class="text-bold-800">Usage (application/json):</p>
+                                  <pre class="line-numbers"> 
+                                    <code class="language-json"> 
+                                      {
+                                          "email": "admin@demo.com",
+                                          "password": "12345678"
+                                      }
+                                    </code> 
+                                  </pre>
+                                  <br>
+                                  <p class="text-bold-800">Response:</p>
+                                  <pre class="line-numbers"> 
+                                    <code class="language-json"> 
+                                      {
+                                          "token": "Bearer 1|24eEcA9gmeRDNEdMG3SKi3r1lwFRv87uBvLHNWyY"
+                                      }
+                                    </code> 
+                                  </pre>
+                                </div>
+                                <br>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              <!--/ Categories -->
+
+                <!-- Categories -->
+                <section id="line-numbers" class="row">
                     <div class=" col-12">
                         <div class="card">
                             <div class="card-header">
@@ -350,19 +424,17 @@
                                                 "provider_id": 1,
                                                 "resource": "Deleting Category"
                                             }
-                                        }
+                                        } 
                                       </code> 
                                     </pre>
                                   </div>
-
-
                                     
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--/ Line Numbers -->
+                <!--/ Categories -->
                 
 
             </div>
