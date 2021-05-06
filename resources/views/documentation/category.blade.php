@@ -6,7 +6,7 @@
         <img src="{{ asset('resources/collect.png') }}"
             style="left:50%; position:relative; transform: translateX(-50%)" alt="">
         <br><br>
-        The <a href="?mode=collect">Collect</a> resource is used to connect a product to a category.
+        The <a href="?mode=collects">Collect</a> resource is used to connect a product to a category.
     </div>
     <hr>
     <div class="body-header">
