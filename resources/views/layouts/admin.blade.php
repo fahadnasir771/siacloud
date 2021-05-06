@@ -98,7 +98,7 @@
                                 <div class=""></div><a class="dropdown-item" href="#" onclick="logout()" ><i class="feather icon-power"></i> Logout</a>
                             </div>
                         </li> --}}
-                        <button class="btn btn-danger" onclick="logout()" style="width:130px;height: 45px;top: 10px; position:relative"><i class="feather icon-power"></i> &nbsp;Logout</button>
+                        <button class="btn btn-outline-danger" onclick="logout()" style="width:130px;height: 45px;top: 10px; position:relative"><i class="feather icon-power"></i> &nbsp;Logout</button>
                     </ul>
                     
                             
