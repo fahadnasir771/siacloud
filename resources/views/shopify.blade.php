@@ -72,7 +72,7 @@
                                   <th>id</th>
                                   <th>STORE NAME</th>
                                   <th>CATEGORY</th>
-                                  <th>GENERIC APIs (GET)</th>
+                                  {{-- <th>GENERIC APIs (GET)</th> --}}
                                   <th>STATUS</th>
                                   <th>CREATED AT</th>
                                   <th>ACTION</th>
@@ -87,7 +87,7 @@
                                     <td><b>{{ $store->id }}</b></td>
                                     <td class="store_name">{{ $store->name }}</td>
                                     <td class="store_category"> {{ $store->category }} </td>
-                                    <td><a href="javascript:void(0)" onclick="alert('Intended to modify later -Alpha Verison')">{{ env('APP_URL') }}admin/api/2021-04/{resource}.json</a></td>
+                                    {{-- <td><a href="javascript:void(0)" onclick="alert('Intended to modify later -Alpha Verison')">{{ env('APP_URL') }}admin/api/2021-04/{resource}.json</a></td> --}}
                                     <td>
                                         <div class="chip chip-{{ ($store->active == 1) ? 'success' : 'danger'  }}">
                                             <div class="chip-body">
@@ -102,10 +102,10 @@
                                         <div class="store_key" style="display: none">{{ $store->key }}</div>
                                         <div class="store_secret" style="display: none">{{ $store->secret }}</div>
 
-                                        <center>
-                                            <span class="action-edit" style="font-size: 16px" data-id="{{ $store->id }}"><i class="feather icon-edit"></i></span>
-                                            <span class="action-delete" data-id="{{ $store->id }}"  style="font-size: 16px; margin-left: 6px" ><i class="feather icon-trash"></i></span>
-                                        </center>
+                                        
+                                        <span class="action-edit" style="font-size: 16px" data-id="{{ $store->id }}"><i class="feather icon-edit"></i></span>
+                                        <span class="action-delete" data-id="{{ $store->id }}"  style="font-size: 16px; margin-left: 6px" ><i class="feather icon-trash"></i></span>
+                                        
                                     </td>
                                 
                                 </tr>

@@ -90,14 +90,17 @@
                         
                     </div>
                     <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                        {{-- <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">Admin</span><span class="user-status"></span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#" onclick="logout()" ><i class="feather icon-power"></i> Logout</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a>
+                                <div class=""></div><a class="dropdown-item" href="#" onclick="logout()" ><i class="feather icon-power"></i> Logout</a>
                             </div>
-                        </li>
+                        </li> --}}
+                        <button class="btn btn-danger" onclick="logout()" style="width:130px;height: 45px;top: 10px; position:relative"><i class="feather icon-power"></i> &nbsp;Logout</button>
                     </ul>
+                    
                             
                         
                     
