@@ -6,6 +6,6 @@
       <li class="side-menu-item {{ (request()->mode == 'collects') ? 'active' : '' }} "><a href="?mode=collects">Collects</a></li>
       <li class="side-menu-item {{ (request()->mode == 'discount_codes') ? 'active' : '' }} "><a href="?mode=discount_codes">Discount Codes</a></li>
       <li class="side-menu-item {{ (request()->mode == 'price_rules') ? 'active' : '' }} "><a href="?mode=price_rules">Price Rules</a></li>
-      <li class="side-menu-item {{ (request()->mode == 'orders') ? 'active' : '' }} "><a href="?mode=orders">Orders</a></li>
+      {{-- <li class="side-menu-item {{ (request()->mode == 'orders') ? 'active' : '' }} "><a href="?mode=orders">Orders</a></li> --}}
   </ul>
 </div>

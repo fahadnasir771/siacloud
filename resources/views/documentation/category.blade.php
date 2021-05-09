@@ -97,6 +97,7 @@
                     <li><b>height:</b> The height of the image in pixels.</li>
                 </ul>
             </td>
+        </tr>
 
         <tr>
             <td style="width: 150px; color: #333;font-weight: 500">id <br> <b style="color: #7367f0">Read Only</b> </td>

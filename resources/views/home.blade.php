@@ -146,6 +146,12 @@
                   @if (request()->mode == 'collects')
                     @include('documentation.collects')
                   @endif
+                  @if (request()->mode == 'price_rules')
+                    @include('documentation.price_rule')
+                  @endif
+                  @if (request()->mode == 'discount_codes')
+                    @include('documentation.discount_codes')
+                  @endif
                  
                 </div>
             </div>
