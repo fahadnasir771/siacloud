@@ -14,12 +14,45 @@
           <br>
           <span class="link-info">Retrieves a list of all the products</span>
       </div>
+
+      <div class="body-link-group">
+          <span class="bullet">&#9679;</span>
+          <span class="link"><a class="anchor" href="#">GET /api/store/{store_id}/product/all?title=Needle</a></span>
+          <br>
+          <span class="link-info">Retrieves a list of all the products where the title (equals, likes) to title parameter</span>
+      </div>
+
+      <div class="body-link-group">
+          <span class="bullet">&#9679;</span>
+          <span class="link"><a class="anchor" href="#">GET /api/store/{store_id}/product/all?handle=Needle</a></span>
+          <br>
+          <span class="link-info">Retrieves a list of all the products where the handle (equals) to handle parameter</span>
+      </div>
+
+      <div class="body-link-group">
+            <span class="bullet">&#9679;</span>
+            <span class="link"><a class="anchor" href="#">GET /api/store/{store_id}/product/all?updated_at=YYYY-MM-DD</a></span>
+            <br>
+            <span class="link-info">Retrieves a list of all the products where the product updated_at equals to updated_at parameter value. <br> You can also use updated_after and updated_before to retreive products updated after the paramater value and before the parameter value respectively</span>
+        </div>
+
+
       <div class="body-link-group">
           <span class="bullet">&#9679;</span>
           <span class="link"><a class="anchor" href="#one">GET /api/store/{store_id}/product/{product_id}</a></span>
           <br>
           <span class="link-info">Retrieves a single product</span>
       </div>
+
+      <div class="body-link-group">
+          <span class="bullet">&#9679;</span>
+          <span class="link"><a class="anchor" href="#product_variant">GET /api/store/{store_id}/product/variant/{variant_id}</a></span>
+          <br>
+          <span class="link-info">Retrieves a variant</span>
+      </div>
+
+
+
       <div class="body-link-group">
           <span class="bullet">&#9679;</span>
           <span class="link"><a class="anchor" href="#store">POST /api/store/{store_id}/product</a></span>
@@ -458,6 +491,54 @@
           </td>
 
       </tr>
+
+    <tr>
+          <td id="product_variant">
+              Retrieves a variant:
+              <div class="link"><span style="font-weight: 500">GET /api/store/{store_id}/product/variant/{variant_id}</span>
+              </div>
+              <br>
+              <p class="text-bold-800">Response:</p>
+              <pre class="line-numbers">
+        <code class="language-json"> 
+{
+    "variant": {
+        "id": 39949430456488,
+        "product_id": 6745759842472,
+        "title": "Default Title",
+        "price": "758.00",
+        "sku": "In harum in laboris",
+        "position": 1,
+        "inventory_policy": "deny",
+        "compare_at_price": "786.00",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Default Title",
+        "option2": null,
+        "option3": null,
+        "created_at": "2021-05-13T14:45:50+05:00",
+        "updated_at": "2021-05-13T15:15:23+05:00",
+        "taxable": true,
+        "barcode": "Quas qui in ea ut pr",
+        "grams": 0,
+        "image_id": null,
+        "weight": 0,
+        "weight_unit": "oz",
+        "inventory_item_id": 42044133638312,
+        "inventory_quantity": 257,
+        "old_inventory_quantity": 257,
+        "requires_shipping": true,
+        "admin_graphql_api_id": "gid://shopify/ProductVariant/39949430456488"
+    }
+}
+        </code> 
+      </pre>
+
+          </td>
+
+      </tr>
+
+
       <tr>
           <td id="store">
               Creates a product:

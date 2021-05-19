@@ -21,6 +21,12 @@
         </div>
         <div class="body-link-group">
             <span class="bullet">&#9679;</span>
+            <span class="link"><a class="anchor" href="#product_collects">GET /api/store/{store_id}/collect/product/{product_id}</a></span>
+            <br>
+            <span class="link-info">Retrieves a list of all the collects with specific Product id</span>
+        </div>
+        <div class="body-link-group">
+            <span class="bullet">&#9679;</span>
             <span class="link"><a class="anchor" href="#one">GET /api/store/{store_id}/collect/{collect_id}</a></span>
             <br>
             <span class="link-info">Retrieves a single collect</span>
@@ -141,6 +147,34 @@
                         "sort_value": "0000000001"
                     }, ...
                 ]
+            }
+          </code> 
+        </pre>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td id="product_collects">
+                Retreivea a list of all the Collects with specific Product id:
+                <div class="link"><span style="font-weight: 500">GET /api/store/{store_id}/collect/product/{product_id}</span></div>
+                <br>
+                <p class="text-bold-800">Response:</p>
+                <pre class="line-numbers">
+          <code class="language-json"> 
+            {
+                "collects": {
+                    "3": {
+                        "id": 29079733436584,
+                        "collection_id": 268448563368,
+                        "product_id": 6745775636648,
+                        "created_at": "2021-05-12T15:23:23+05:00",
+                        "updated_at": "2021-05-12T15:23:23+05:00",
+                        "position": 2,
+                        "sort_value": "0000000002"
+                    }, ...
+                }
             }
           </code> 
         </pre>

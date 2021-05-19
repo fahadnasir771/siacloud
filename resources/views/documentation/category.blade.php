@@ -21,6 +21,18 @@
         </div>
         <div class="body-link-group">
             <span class="bullet">&#9679;</span>
+            <span class="link"><a class="anchor" href="#">GET /api/store/{store_id}/category/all?title=Needle</a></span>
+            <br>
+            <span class="link-info">Retrieves a list of all the categories where the title (equals, likes) to title parameter</span>
+        </div>
+        <div class="body-link-group">
+            <span class="bullet">&#9679;</span>
+            <span class="link"><a class="anchor" href="#">GET /api/store/{store_id}/category/all?updated_at=YYYY-MM-DD</a></span>
+            <br>
+            <span class="link-info">Retrieves a list of all the categories where the category updated_at equals to updated_at parameter value. <br> You can also use updated_after and updated_before to retreive categories updated after the paramater value and before the parameter value respectively</span>
+        </div>
+        <div class="body-link-group">
+            <span class="bullet">&#9679;</span>
             <span class="link"><a class="anchor" href="#one">GET /api/store/{store_id}/category/{category_id}</a></span>
             <br>
             <span class="link-info">Retrieves a single category</span>

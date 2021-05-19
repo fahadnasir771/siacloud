@@ -30,6 +30,7 @@ Route::group([
     // Navigation
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/shopify', [HomeController::class, 'shopify'])->name('shopify');
+    Route::post('/token-expiry', [HomeController::class, 'token_expiry'])->name('token_expiry');
 
     // Store
     Route::resource('/store', StoreController::class);

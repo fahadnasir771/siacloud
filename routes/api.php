@@ -47,7 +47,10 @@ Route::group(
       Route::post('{id2}', [ApiController::class, 'put_product'])->name('update');
       Route::post('{id2}/variant/{id3}', [ApiController::class, 'put_product_variant'])->name('update.variant');
       Route::delete('{id2}', [ApiController::class, 'delete_product'])->name('delete');
+
+      Route::get('variant/{id2}', [ApiController::class, 'get_product_variant'])->name('product_variant');
     });
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -59,6 +62,8 @@ Route::group(
       Route::get('{id2}', [ApiController::class, 'get_collect'])->name('one');
       Route::post('', [ApiController::class, 'post_collect'])->name('store');
       Route::delete('{id2}', [ApiController::class, 'delete_collect'])->name('delete');
+
+      Route::get('product/{id2}', [ApiController::class, 'get_product_collects'])->name('get_product_collects');
     });
 
     /*
@@ -72,6 +77,8 @@ Route::group(
       Route::post('', [ApiController::class, 'post_price_rule'])->name('store');
       Route::post('{id2}', [ApiController::class, 'put_price_rule'])->name('update');
       Route::delete('{id2}', [ApiController::class, 'delete_price_rule'])->name('delete');
+
+      Route::get('product/{id2}', [ApiController::class, 'get_product_price_rules'])->name('get_product_price_rules');
 
       Route::get('{id2}/discount-code/all', [ApiController::class, 'get_discount_codes'])->name('discount_code.all');
       Route::get('{id2}/discount-code/{id3}', [ApiController::class, 'get_discount_code'])->name('discount_code.one');

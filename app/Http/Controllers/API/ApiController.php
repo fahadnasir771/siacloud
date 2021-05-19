@@ -56,6 +56,40 @@ class ApiController extends Controller
 
         $data = Http::get($domain . '/admin/api/2021-04/custom_collections.json')->json();
         
+        if($request->title){
+            $count = count($data['custom_collections']);
+            for($i=0; $i < $count; $i++){
+                if(!str_contains(strtolower($data['custom_collections'][$i]['title']), strtolower($request->title))){
+                    unset($data['custom_collections'][$i]);
+                }
+                
+            }
+        }
+        if($request->updated_at){
+            $count = count($data['custom_collections']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['custom_collections'][$i]['updated_at'])[0] != $request->updated_at){
+                    unset($data['custom_collections'][$i]);
+                }
+            }
+        }
+        if($request->updated_after){
+            $count = count($data['custom_collections']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['custom_collections'][$i]['updated_at'])[0] <= $request->updated_after){
+                    unset($data['custom_collections'][$i]);
+                }
+            }
+        }
+        if($request->updated_before){
+            $count = count($data['custom_collections']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['custom_collections'][$i]['updated_at'])[0] >= $request->updated_before){
+                    unset($data['custom_collections'][$i]);
+                }
+            }
+        }
+        
         if(!empty($data->custom_collection)){
             $data['categories'] = $data['custom_collections'];
             unset($data['custom_collections']);
@@ -139,6 +173,57 @@ class ApiController extends Controller
     function get_products(Request $request, $id){
         $domain = $this->get_domain($id);
         $data = Http::get($domain . '/admin/api/2021-04/products.json')->json();
+
+        // Title (= , LIKE)
+        if($request->title){
+            $count = count($data['products']);
+            for($i=0; $i < $count; $i++){
+                if(!str_contains(strtolower($data['products'][$i]['title']), strtolower($request->title))){
+                    unset($data['products'][$i]);
+                }
+                
+            }
+        }
+
+        // Handle (=)
+        if($request->handle){
+            $count = count($data['products']);
+            for($i=0; $i < $count; $i++){
+                if(strtolower($data['products'][$i]['handle']) != strtolower($request->handle)){
+                    unset($data['products'][$i]);
+                }
+                
+            }
+        }
+
+        if($request->updated_at){
+            $count = count($data['products']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['products'][$i]['updated_at'])[0] != $request->updated_at){
+                    unset($data['products'][$i]);
+                }
+            }
+        }
+        if($request->updated_after){
+            $count = count($data['products']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['products'][$i]['updated_at'])[0] <= $request->updated_after){
+                    unset($data['products'][$i]);
+                }
+            }
+        }
+        if($request->updated_before){
+            $count = count($data['products']);
+            for($i=0; $i < $count; $i++){
+                if(explode('T',$data['products'][$i]['updated_at'])[0] >= $request->updated_before){
+                    unset($data['products'][$i]);
+                }
+            }
+        }
+
+
+
+        
         return $data;
     }
 
@@ -216,6 +301,9 @@ class ApiController extends Controller
         ];
     }
 
+    
+
+
     /*
     |--------------------------------------------------------------------------
     | COLLECT
@@ -262,6 +350,26 @@ class ApiController extends Controller
                 'Deleting Collect'
             ]
         ];
+    }
+
+    function get_product_collects(Request $request, $id, $id2){
+        $domain = $this->get_domain($id);
+        $data = Http::get($domain . '/admin/api/2021-04/collects.json')->json();
+        
+        $count = count($data['collects']);
+        for($i=0; $i < $count; $i++){
+            if($data['collects'][$i]['product_id'] != $id2){
+                unset($data['collects'][$i]);
+            }
+        }
+
+        return $data;
+    }
+    
+    function get_product_variant(Request $request, $id, $id2){
+        $domain = $this->get_domain($id);
+        $data = Http::get($domain . '/admin/api/2021-04/variants/' . $id2 .  '.json')->json();
+        return $data;
     }
 
     /*
@@ -322,6 +430,20 @@ class ApiController extends Controller
                 'Deleting Price Rule'
             ]
         ];
+    }
+
+    function get_product_price_rules(Request $request, $id, $id2){
+        $domain = $this->get_domain($id);
+        $data = Http::get($domain . '/admin/api/2021-04/price_rules.json')->json();
+
+        $count = count($data['price_rules']);
+        for($i=0; $i < $count; $i++){
+            if(!in_array($id2, $data['price_rules'][$i]['entitled_product_ids'])){
+                unset($data['price_rules'][$i]);
+            }
+        }
+
+        return $data;
     }
 
     /*

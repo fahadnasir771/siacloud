@@ -26,8 +26,16 @@
           <span class="bullet">&#9679;</span>
           <span class="link"><a class="anchor" href="#all">GET /api/store/{store_id}/price-rule/all</a></span>
           <br>
-          <span class="link-info">Retrieves a list of all the proce rules</span>
+          <span class="link-info">Retrieves a list of all the price rules</span>
       </div>
+
+      <div class="body-link-group">
+          <span class="bullet">&#9679;</span>
+          <span class="link"><a class="anchor" href="#product_price_rules">GET /api/store/{store_id}/price-rule/product/{product_id}</a></span>
+          <br>
+          <span class="link-info">Retrieves a list of all the price rules with specific entitled Product id</span>
+      </div>
+
       <div class="body-link-group">
           <span class="bullet">&#9679;</span>
           <span class="link"><a class="anchor" href="#one">GET /api/store/{store_id}/price-rule/{price_rule_id}</a></span>
@@ -604,6 +612,68 @@
           </td>
 
       </tr>
+
+      <tr>
+            <td id="product_price_rules">
+                Retrieves a list of all the price rules with specific entitled Product id:
+                <div class="link"><span style="font-weight: 500">GET /api/store/{store_id}/price-rule/product/{product_id}</span></div>
+                <br>
+                <p class="text-bold-800">Response:</p>
+                <pre class="line-numbers">
+          <code class="language-json"> 
+            {
+              "price_rules": [
+                  {
+                      "id": 936587886760,
+                      "value_type": "fixed_amount",
+                      "value": "-10.0",
+                      "customer_selection": "all",
+                      "target_type": "line_item",
+                      "target_selection": "entitled",
+                      "allocation_method": "across",
+                      "allocation_limit": null,
+                      "once_per_customer": false,
+                      "usage_limit": null,
+                      "starts_at": "2017-01-12T22:59:10+05:00",
+                      "ends_at": null,
+                      "created_at": "2021-05-12T15:27:14+05:00",
+                      "updated_at": "2021-05-12T15:36:12+05:00",
+                      "entitled_product_ids": [
+                          6745759842472,
+                          6745777242280
+                      ],
+                      "entitled_variant_ids": [],
+                      "entitled_collection_ids": [],
+                      "entitled_country_ids": [],
+                      "prerequisite_product_ids": [],
+                      "prerequisite_variant_ids": [],
+                      "prerequisite_collection_ids": [],
+                      "prerequisite_saved_search_ids": [],
+                      "prerequisite_customer_ids": [],
+                      "prerequisite_subtotal_range": null,
+                      "prerequisite_quantity_range": null,
+                      "prerequisite_shipping_price_range": null,
+                      "prerequisite_to_entitlement_quantity_ratio": {
+                          "prerequisite_quantity": null,
+                          "entitled_quantity": null
+                      },
+                      "prerequisite_to_entitlement_purchase": {
+                          "prerequisite_amount": null
+                      },
+                      "title": "Updated Price Rule",
+                      "admin_graphql_api_id": "gid://shopify/PriceRule/936587886760"
+                  }, ...
+              ]
+          }
+          </code> 
+        </pre>
+
+            </td>
+
+        </tr>
+
+
+
       <tr>
           <td id="one">
               Retrieves a single price rule
